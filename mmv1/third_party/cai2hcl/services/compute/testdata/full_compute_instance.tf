@@ -141,6 +141,7 @@ resource "google_compute_instance" "test2" {
   
   reservation_affinity {
     type = "SPECIFIC_RESERVATION"
+
     specific_reservation {
       key    = "compute.googleapis.com/reservation-name"
       values = ["my-reservation"]
