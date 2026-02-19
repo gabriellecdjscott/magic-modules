@@ -138,6 +138,14 @@ resource "google_compute_instance" "test2" {
     network     = "projects/test-project/global/networks/default"
     queue_count = 0
   }
+  
+  reservation_affinity {
+    type = "SPECIFIC_RESERVATION"
+    specific_reservation {
+      key    = "compute.googleapis.com/reservation-name"
+      values = ["my-reservation"]
+    }
+  }
 
   scheduling {
     automatic_restart = true
