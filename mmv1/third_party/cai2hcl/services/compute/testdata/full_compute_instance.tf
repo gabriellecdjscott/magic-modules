@@ -138,7 +138,7 @@ resource "google_compute_instance" "test2" {
     network     = "projects/test-project/global/networks/default"
     queue_count = 0
   }
-  
+
   reservation_affinity {
     specific_reservation {
       key    = "compute.googleapis.com/reservation-name"
